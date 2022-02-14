@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *:before,
 *:after {
@@ -33,13 +34,67 @@ a {
   display: block;
 }
 
-header {
+.bg-img {
   position: relative;
+  display: block;
   width: 100%;
-  height: 80px;
-  background-color: #ffb1a6;
+  height: auto;
+  margin: 0 auto;
+  opacity: -999;
 }
 
+.bg-img-sp {
+  display: none;
+}
+
+.cover {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.cover-box {
+  position: relative;
+}
+
+#slideshow img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
+}
+
+#slideshow {
+  display: block;
+}
+
+#slideshow-sp {
+  display: none;
+}
+
+.counseling-btn-sp-top {
+  display: none;
+}
+
+.cover-slideshow-text {
+  position: absolute;
+  bottom: 8.0rem;
+  left: 11.0rem;
+  font-size: 3.6rem;
+  line-height: 5.4rem;
+  z-index: 100;
+  font-family: Seri;
+}
+
+/* ▲　スライドショー */
 #top-main {
   position: relative;
   height: calc(100vh - 80px);
@@ -69,113 +124,6 @@ header {
   width: 20%;
   background-color: #ffb1a6;
   z-index: 100;
-}
-
-@-webkit-keyframes display {
-  0% {
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
-    opacity: 0;
-  }
-  30% {
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
-    opacity: 0;
-  }
-  50% {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    opacity: 1;
-  }
-  70% {
-    -webkit-transform: translateX(-150%);
-            transform: translateX(-150%);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(-150%);
-            transform: translateX(-150%);
-    opacity: 0;
-  }
-}
-
-@keyframes display {
-  0% {
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
-    opacity: 0;
-  }
-  30% {
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
-    opacity: 0;
-  }
-  50% {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    opacity: 1;
-  }
-  70% {
-    -webkit-transform: translateX(-150%);
-            transform: translateX(-150%);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(-150%);
-            transform: translateX(-150%);
-    opacity: 0;
-  }
-}
-
-.bg-pic img {
-  width: 100%;
-  height: auto;
-  opacity: 0;
-}
-
-.pic-ctn > img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  top: 0px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  opacity: 0;
-  -webkit-animation: display 15s infinite;
-          animation: display 15s infinite;
-  z-index: 10;
-}
-
-.object-fit-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-img:nth-child(2) {
-  -webkit-animation-delay: -12s;
-          animation-delay: -12s;
-}
-
-img:nth-child(3) {
-  -webkit-animation-delay: -9s;
-          animation-delay: -9s;
-}
-
-img:nth-child(4) {
-  -webkit-animation-delay: -6s;
-          animation-delay: -6s;
-}
-
-img:nth-child(5) {
-  -webkit-animation-delay: -3s;
-          animation-delay: -3s;
-}
-
-.nd img {
-  width: 100%;
 }
 
 #latest {
@@ -535,34 +483,40 @@ img:nth-child(5) {
 
 .albums {
   position: fixed;
-  width: 80%;
-  height: auto;
+  width: 100%;
+  height: 100vh;
+  padding-top: 10px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   visibility: hidden;
+  overflow-y: scroll;
   opacity: 0;
   z-index: 998;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-.albums.albums-tab {
+.albums .albums-tab {
   position: relative;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.albums .albums-tab .slick-next {
+  right: 20px;
+  z-index: 100;
+}
+
+.albums .albums-tab .slick-prev {
+  left: 15px;
+  z-index: 100;
 }
 
 .albums .close-btn {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 50px;
@@ -572,20 +526,20 @@ img:nth-child(5) {
 }
 
 .albums .pic {
-  width: 30%;
+  width: 20%;
   padding: 10px;
 }
 
 .albums.album-click {
   visibility: visible;
-  width: 80%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   opacity: 1;
 }
 
 .albums.album-click .pic {
-  width: 30%;
+  width: 20%;
   padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */

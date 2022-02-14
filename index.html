@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OLIVIA</title>
+    <link href="Slick/slick-theme.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="Slick/slick.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,20 +16,27 @@
 
         </div>
     </header>
-    <div id="top-main" id="pic-height">
-        <div id="center-main">
-            <div class="pic-ctn" >
-                <div class="bg-pic">
-                    <img src="img/pic01.jpg" alt="bg">
-                </div>
+
+     <!-- ▼　スライドショー -->
+     <div class="cover">
+        <div class="cover-box">
+            <!-- <img class="bg-img" src="img/cover_pc01.png" alt="いつまでもキレイでいたい全ての女性のために 01">
+            <img class="bg-img-sp" src="img/cover_sp01.png" alt="いつまでもキレイでいたい全ての女性のために 01"> -->
+            <div id="slideshow">
                 <img class="pic" src="img/pic01.jpg" alt="Olivia_01">
                 <img class="pic" src="img/pic02.jpg" alt="Olivia_02">
                 <img class="pic" src="img/pic03.jpg" alt="Olivia_03">
                 <img class="pic" src="img/pic04.jpg" alt="Olivia_03">
                 <img class="pic" src="img/pic05.jpg" alt="Olivia_03">
             </div>
+            <!-- <div id="slideshow-sp">
+                <img src="img/cover_sp01.png" alt="いつまでもキレイでいたい全ての女性のために 01">
+                <img src="img/cover_sp02.png" alt="いつまでもキレイでいたい全ての女性のために 02">
+                <img src="img/cover_sp03.png" alt="いつまでもキレイでいたい全ての女性のために 03">
+            </div> -->
         </div>
     </div>
+    <!-- ▲　スライドショー -->
 
 
     <div id="latest">
@@ -161,8 +170,8 @@
         </div>
 
         <div class="albums">
-            <div class="albums-tab">
-                <img class="close-btn" src="img/croix3.svg" alt="">
+            <img class="close-btn" src="img/croix3.svg" alt="">
+            <div class="albums-tab scroll-pane">
                 <img class="pic" src="img/pic01.jpg" alt="Olivia_01">
                 <img class="pic" src="img/pic02.jpg" alt="Olivia_02">
                 <img class="pic" src="img/pic03.jpg" alt="Olivia_03">
@@ -171,8 +180,8 @@
             </div>
         </div>
         <div class="albums">
+            <img class="close-btn" src="img/croix3.svg" alt="">
             <div class="albums-tab">
-                <img class="close-btn" src="img/croix3.svg" alt="">
                 <img class="pic" src="img/pic01.jpg" alt="Olivia_01">
                 <img class="pic" src="img/pic02.jpg" alt="Olivia_02">
                 <img class="pic" src="img/pic03.jpg" alt="Olivia_03">
@@ -192,8 +201,9 @@
         </div>
 
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="main.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="Slick/slick.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

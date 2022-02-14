@@ -1,3 +1,44 @@
+// topのスライドショー
+let width;
+let slider;
+let imageArray;
+let activeImageIndex = 0;
+window.onload = function() {
+    width = window.innerWidth;
+    show(width);
+}
+window.onresize = function() {
+    width = window.innerWidth;
+    show(width);
+}
+function show(showWidth) {
+    // console.log(showWidth);
+    if (showWidth <= 767) {  //レスポンシブ切り替えの値
+        console.log('スマホ');
+        slider = document.getElementById('slideshow-sp');
+        imageArray = slider.getElementsByTagName('img');
+        imageArray[activeImageIndex].style.opacity = 1;
+    }else{
+        console.log('PC');
+        slider = document.getElementById('slideshow');
+        imageArray = slider.getElementsByTagName('img');
+        imageArray[activeImageIndex].style.opacity = 1;
+    }
+}
+setTimeout('nextImage()', 2000);
+function nextImage(){
+    imageArray[activeImageIndex].style.opacity = 0;
+    console.log(imageArray.length);
+    if(activeImageIndex >= imageArray.length - 1){
+        activeImageIndex = 0;
+    }else{
+        activeImageIndex += 1;
+    }
+    imageArray[activeImageIndex].style.opacity = 1;
+    setTimeout('nextImage()', 4000);
+}
+
+
 // ▼　スクロールアニメーション
 const scrollEvent = function () {
     const ClassElem = document.getElementsByClassName("scroll");  //下からフェードイン
@@ -45,3 +86,14 @@ const hoverEvent = function() {
     }
 }
 hoverEvent();
+
+
+// ▼ Slick設定
+$('.albums-tab').slick({
+    autoplay: true, //自動再生
+    dots: true, //ドットのナビゲーションを表示
+    infinite: true, //スライドのループ有効化
+    speed: 1000, //切り替えのスピード（小さくすると速くなる）
+    fade: true, //フェードの有効化
+    adaptiveHeight: true, //スライドの高さの自動調整
+});
