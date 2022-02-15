@@ -473,61 +473,31 @@ a {
   transition: all .5s ease-in;
 }
 
-.album-box-left .albums {
-  padding: 0 80% 10% 0;
-}
-
-.album-box-right .albums {
-  padding: 0 0 10% 99%;
-}
-
 .albums {
   position: fixed;
   width: 100%;
   height: 100vh;
-  padding-top: 10px;
+  padding-top: 20vh;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   visibility: hidden;
-  overflow-y: scroll;
   opacity: 0;
   z-index: 998;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-.albums .albums-tab {
-  position: relative;
-  max-width: 1200px;
-  height: auto;
-  margin: 0 auto;
-}
-
-.albums .albums-tab .slick-next {
-  right: 20px;
-  z-index: 100;
-}
-
-.albums .albums-tab .slick-prev {
-  left: 15px;
-  z-index: 100;
-}
-
 .albums .close-btn {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  width: 50px;
+  width: 70px;
   padding: 10px;
   height: auto;
   z-index: 999;
-}
-
-.albums .pic {
-  width: 20%;
-  padding: 10px;
+  cursor: pointer;
 }
 
 .albums.album-click {
@@ -538,8 +508,50 @@ a {
   opacity: 1;
 }
 
-.albums.album-click .pic {
-  width: 20%;
-  padding: 10px;
+.albums.album-click .slick-slide {
+  margin: 0px 50px;
+}
+
+.slider {
+  width: 90%;
+  margin: 0 auto 80px;
+}
+
+.slick-slide img {
+  width: auto;
+  height: 100%;
+}
+
+.pic-ctn {
+  width: 100%;
+  padding-top: 50px;
+}
+
+.slick-track {
+  height: 60vh;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  #slideshow-sp {
+    display: block;
+  }
+  #slideshow-sp img {
+    width: 100%;
+    height: 100vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    -webkit-transition: all 1.2s;
+    transition: all 1.2s;
+  }
+  #slideshow {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
