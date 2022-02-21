@@ -53,6 +53,17 @@ h2 {
   font-family: Ram;
 }
 
+h3 {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1% 2%;
+  font-size: 2.0rem;
+  line-height: 2.5rem;
+  background: -webkit-gradient(linear, left top, right top, from(#362ae0), color-stop(50%, #3b79cc), to(#42d3ed));
+  background: linear-gradient(to right, #362ae0 0%, #3b79cc 50%, #42d3ed 100%);
+  color: #fff;
+}
+
 .bg-img {
   position: relative;
   display: block;
@@ -142,6 +153,7 @@ body {
   margin: 0 auto;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
+  z-index: 999;
 }
 
 #oita01, #oita02 {
@@ -565,238 +577,31 @@ body {
   background-color: rgba(232, 251, 225, 0.562);
 }
 
-#album .al-text {
-  position: absolute;
-  width: 30%;
-  height: auto;
-  top: 10vh;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform-origin: top center;
-          transform-origin: top center;
-  -webkit-perspective: 600px;
-          perspective: 600px;
-}
-
-#album .al-text p {
-  width: 100%;
-  height: 100%;
-  display: block;
-  font-family: Ram;
-  line-height: 2.0rem;
-  text-align: center;
-  opacity: 0;
-  -webkit-transform-origin: top center;
-          transform-origin: top center;
-  -webkit-transform: rotateX(90deg);
-          transform: rotateX(90deg);
-}
-
-#album .al-text p:nth-of-type(1) {
-  margin: 10% 0;
-  padding: 15%;
-  font-size: 2.3rem;
-}
-
-#album .al-text p:nth-of-type(2) {
-  margin: 10% 0;
-  padding: 8%;
-  font-size: 1.5rem;
-}
-
-#album .al-text.js-fade p {
-  display: inline-block;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(15%, #93E88D), to(#B5FFAF));
-  background: linear-gradient(to top, #93E88D 15%, #B5FFAF 100%);
-  -webkit-transform: rotateX(0);
-          transform: rotateX(0);
-}
-
-#album .al-text.js-fade p:nth-of-type(1) {
-  margin: 10% 0;
-  -webkit-animation: bg 5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-          animation: bg 5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-#album .al-text.js-fade p:nth-of-type(2) {
-  -webkit-animation: bg 5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-          animation: bg 5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  -webkit-animation-delay: .5s;
-          animation-delay: .5s;
-}
-
-@-webkit-keyframes bg {
-  0% {
-    opacity: 0;
-    -webkit-transform: rotateX(90deg);
-            transform: rotateX(90deg);
-  }
-  10% {
-    opacity: 1;
-  }
-  70% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes bg {
-  0% {
-    opacity: 0;
-    -webkit-transform: rotateX(90deg);
-            transform: rotateX(90deg);
-  }
-  10% {
-    opacity: 1;
-  }
-  70% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
-    opacity: 1;
-  }
-}
-
-.album-box {
-  margin: 2% 10% 0 10%;
-}
-
-.pic-cartain-left, .pic-cartain-right {
-  display: block;
-  width: 70%;
-  height: 60vh;
-  overflow: hidden;
-}
-
-.pic-cartain-left img, .pic-cartain-right img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  cursor: pointer;
-  z-index: 100;
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
-}
-
-.pic-cartain-left img:hover, .pic-cartain-right img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.pic-cartain-left::before, .pic-cartain-right::before {
-  display: block;
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 70%;
-  height: 60vh;
-  background-color: #E8FBE1;
-  z-index: 200;
-}
-
-.pic-cartain-left::before {
-  left: 0;
-  -webkit-transform-origin: left;
-          transform-origin: left;
-}
-
-.pic-cartain-right::before {
-  right: 0;
-  -webkit-transform-origin: right;
-          transform-origin: right;
-}
-
-.pic-cartain-left.js-fade::before, .pic-cartain-right.js-fade::before {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-animation: cartain 3s cubic-bezier(0.22, 1, 0.36, 1);
-          animation: cartain 3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@-webkit-keyframes cartain {
-  0% {
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
-  }
-  100% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-  }
-}
-
-@keyframes cartain {
-  0% {
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
-  }
-  100% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-  }
-}
-
-.al-left, .al-right {
-  position: relative;
+.al-text-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  margin: 0 10% 5% 10%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
 }
 
-.al-left .al-text {
-  right: -5%;
-}
-
-.al-right {
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
-}
-
-.al-right img {
-  display: block;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-}
-
-.al-right .al-text {
-  left: -5%;
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
-}
-
-#hover-al {
-  -webkit-transition: all .5s ease-in;
-  transition: all .5s ease-in;
+.al-text-box .al-text-area {
+  font-size: 1.0rem;
+  margin: 1% 0;
 }
 
 .albums {
-  position: fixed;
-  width: 100%;
+  position: relative;
+  width: 100vw;
   height: 100vh;
   padding-top: 20vh;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  visibility: hidden;
-  opacity: 0;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   z-index: 998;
   -webkit-transition: 1s;
   transition: 1s;
@@ -817,18 +622,6 @@ body {
   cursor: pointer;
 }
 
-.albums.album-click {
-  visibility: visible;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  opacity: 1;
-}
-
-.albums.album-click .slick-slide {
-  margin: 0px 50px;
-}
-
 .slider {
   width: 90%;
   margin: 0 auto 80px;
@@ -847,6 +640,25 @@ body {
 .slick-track {
   height: 60vh;
   cursor: pointer;
+}
+
+.slick-next {
+  right: 10%;
+}
+
+.slick-prev {
+  left: 10%;
+}
+
+.slick-next::before, .slick-prev::before {
+  font-size: 5.0rem;
+  color: #008c06;
+}
+
+.slick-arrow {
+  z-index: 2;
+  width: 50px;
+  height: 50px;
 }
 
 .background {

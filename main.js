@@ -99,33 +99,33 @@ const scrollEvent = function () {
 scrollEvent();
 
 
-const hoverEvent = function() {
-    const albumEvent =document.getElementsByClassName("album-pic");
-    const closeEvent =document.getElementsByClassName("close-btn");
+// const hoverEvent = function() {
+//     const albumEvent =document.getElementsByClassName("album-pic");
+//     const closeEvent =document.getElementsByClassName("close-btn");
     
-    for(let i = 0; i < albumEvent.length; i++) {
-        albumEvent[i].onclick = function() {
-            console.log(i);
-            let albumsEl = document.getElementsByClassName('albums');
-            albumsEl[i].classList.add('album-click');
-        }
-        closeEvent[i].onclick = function() {
-            console.log(i);
-            let albumsEl = document.getElementsByClassName('albums');
-            albumsEl[i].classList.remove('album-click');
-        }
-    }
-}
-hoverEvent();
+//     for(let i = 0; i < albumEvent.length; i++) {
+//         albumEvent[i].onclick = function() {
+//             console.log(i);
+//             let albumsEl = document.getElementsByClassName('albums');
+//             albumsEl[i].classList.add('album-click');
+//         }
+//         closeEvent[i].onclick = function() {
+//             console.log(i);
+//             let albumsEl = document.getElementsByClassName('albums');
+//             albumsEl[i].classList.remove('album-click');
+//         }
+//     }
+// }
+// hoverEvent();
 
 
 // ▼ Slick設定
 $("document").ready(function () {
     $('.albums-tab').slick({
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2500,
         speed: 1800,
-        arrows: false,
+        arrows: true,
         centerMode: true,
         centerPadding: '25%',
         variableWidth: true,
