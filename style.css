@@ -784,6 +784,9 @@ body {
 }
 
 @media screen and (max-width: 1023px) {
+  .slick-outer img {
+    width: 100vw;
+  }
   .slick-active .slick-content p {
     margin: 0;
     padding: 0;
@@ -796,6 +799,12 @@ body {
     font-weight: bold;
     font-size: 1.2rem;
     color: #fff;
+  }
+  .slick-next, .slick-prev {
+    top: 39%;
+  }
+  .slick-next::before, .slick-prev::before {
+    font-size: 3.0rem;
   }
 }
 

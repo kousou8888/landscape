@@ -557,54 +557,11 @@ body {
 
 // ▼　タブレットサイズ
 @media screen and (max-width:1023px) {
-    // .al-text-box {
-    //     & .al-text-area {
-    //         font-size: 1.0rem;
-    //     }
-    //     & .album-title {
-    //         // display: inline-block;
-    //         padding: 0vh 2%;
-    //         font-size: 1.0rem;
-    //         line-height: 2.5rem;
-    //         background: linear-gradient(to right, #362ae0 0%,#3b79cc 50%,#42d3ed 100%);
-    //         border-radius: 10px;
-    //         color: #fff;
-    //         transform-origin: left center;
-    //         transform: scale(0);
-    //         opacity: 0;
-    //     }
-    // }
-    // .albums-tab {
-    //     margin: 7vh 0;
-    // }
-    // .al-text-box {
-    //     & .al-text-area {
-    //         font-size: 1.0rem;
-    //         margin: 2vh 0;
-    //     }
-    //     & .album-title {
-    //         padding: 1vh 2%;
-    //         font-size: 1.2rem;
-    //         line-height: 1.5rem;
-    //     }
-    // }
-    // .slick-track{
-    //     height: 45vh;
-    // }
-    // .slick-next{
-    //     right: 1%;
-    //     top: 22vh;
-    // }
-    // .slick-prev{
-    //     left: 1%;
-    //     top: 22vh;
-    // }
-    // .slick-next, .slick-prev {
-    //     &::before {
-    //         font-size: 3.0rem;
-    //         color: rgba(13, 200, 0, 0.7);
-    //     }
-    // }
+    .slick-outer {
+        & img {
+            width: 100vw;
+        }
+    }
     .slick-active {
         & .slick-content{
             & p {
@@ -620,6 +577,12 @@ body {
               font-size: 1.2rem;
               color: #fff;
             }
+        }
+    }
+    .slick-next, .slick-prev {
+        top: 39%;
+        &::before {
+            font-size: 3.0rem;
         }
     }
 
