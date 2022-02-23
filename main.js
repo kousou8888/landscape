@@ -104,10 +104,10 @@ $("document").ready(function () {
     $('.albums-tab').slick({
         autoplay: false,
         // autoplaySpeed: 2500,
-        speed: 1800,
+        speed: 1500,
         arrows: true,
         centerMode: true,
-        centerPadding: '25%',
+        centerPadding: '35%',
         variableWidth: true,
     });
 });
