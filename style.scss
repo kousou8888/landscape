@@ -171,32 +171,6 @@ body {
 /* ▲　svgアニメーション */
 
 
-// #top-main {
-//     position: relative;
-//     height: calc(100vh - 80px);
-//     display: flex;
-//     background-color: #E8FBE1;
-//     z-index: -100;
-// }
-// #center-main {
-//     width: 100%;
-// }
-// .top-left {
-//     width: 20%;
-//     height: auto;
-//     background-color: #E8FBE1;
-//     z-index: 100;
-// }
-// .pic-ctn {
-//     width: 100%;
-// }
-// .top-right {
-//     width: 20%;
-//     background-color: #E8FBE1;
-//     z-index: 100;
-// }
-
-
 // ▼　Top Picks エリア
 // ▼　サムネイル型カルーセル
 @mixin aspect-ratio($width, $height) {
@@ -353,7 +327,7 @@ body {
         padding-right: 50%;
         transform: scale(50%);
         opacity: 0;
-        max-width: calc(100% / 6);  
+        max-width: calc(65% / 6);  
         margin: 0 10px;
         transition: all 300ms ease-in-out;
     }
@@ -396,17 +370,6 @@ body {
         background-color: rgba(232, 251, 225, 0.562);
         overflow-y: hidden;
 }
-.al-text-box {
-    display: flex;
-    // justify-content: center;
-    // align-content: center;
-    flex-direction: column;
-    text-align: center;
-    & .al-text-area {
-        font-size: 1.0rem;
-        margin: 5% 0;
-    }
-}
 .albums {
     position: relative;
     width: 100%;
@@ -424,10 +387,16 @@ body {
     }
 }
 .al-text-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    & .al-text-area {
+        font-size: 1.0vh;
+        margin: 5vh 0;
+    }
     & .album-title {
-        // display: inline-block;
         margin: 0 auto;
-        padding: 1% 2%;
+        padding: 1vh 2%;
         font-size: 2.0rem;
         line-height: 2.5rem;
         background: linear-gradient(to right, #362ae0 0%,#3b79cc 50%,#42d3ed 100%);
@@ -455,6 +424,8 @@ body {
     }
 }
 .albums-tab {
+    position: relative;
+    height: 60vh;
     &.scroll-album {
         top: 20%;
         opacity: 0;
@@ -549,6 +520,59 @@ body {
 // ▲　アルバムエリア
 
 
+// ▼　タブレットサイズ
+@media screen and (max-width:1023px) {
+    .al-text-box {
+        & .al-text-area {
+            font-size: 1.0rem;
+        }
+        & .album-title {
+            // display: inline-block;
+            padding: 0vh 2%;
+            font-size: 1.0rem;
+            line-height: 2.5rem;
+            background: linear-gradient(to right, #362ae0 0%,#3b79cc 50%,#42d3ed 100%);
+            border-radius: 10px;
+            color: #fff;
+            transform-origin: left center;
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+    .albums-tab {
+        margin: 7vh 0;
+    }
+    .al-text-box {
+        & .al-text-area {
+            font-size: 1.0rem;
+            margin: 2vh 0;
+        }
+        & .album-title {
+            padding: 1vh 2%;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+    }
+    .slick-track{
+        height: 45vh;
+    }
+    .slick-next{
+        right: 1%;
+        top: 22vh;
+    }
+    .slick-prev{
+        left: 1%;
+        top: 22vh;
+    }
+    .slick-next, .slick-prev {
+        &::before {
+            font-size: 3.0rem;
+            color: rgba(13, 200, 0, 0.7);
+        }
+    }
+
+}
+
 
 @media screen and (max-width:767px) {
     #slideshow-sp {
@@ -591,10 +615,6 @@ body {
     }
 
 
-
-    .carousel__slides {
-        
-    }
     .carousel__slide {
     
         figure {
@@ -604,15 +624,6 @@ body {
         div {
             @include aspect-ratio(3, 2);
             width: 100%;
-        }
-        img {
-            
-        }
-        figcaption {
-            
-        }
-        .credit {
-               
         }
     }
     .carousel__thumbnails {
@@ -630,24 +641,69 @@ body {
     }
 
 
+    // ▼　アルバムエリア
+    .albums {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        min-height: 60vh;
+        padding-top: 20vh;
+        // top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 998;
+        transition: 1s;
+
+        & .slick-slide {  //slick設定
+            margin: 0px 50px;
+        }
+    }
+    .al-text-box {
+        & .al-text-area {
+            font-size: 1.0rem;
+            margin: 2vh 0;
+        }
+        & .album-title {
+            padding: 1vh 2%;
+            font-size: .8rem;
+            line-height: 1rem;
+        }
+    }
     .albums-tab {
         margin: 10vh 0;
-    }
-    .slider {
+        &.scroll-album {
+            top: 20%;
+            opacity: 0;
 
+            &.js-fade {
+                animation: scroll-up 1.5s cubic-bezier(0.28, 0.72, 0.55, 1.13);
+                top: 0;
+                opacity: 1;
+                @keyframes scroll-up {
+                    0% {
+                        opacity: 0;
+                        top: 50px;
+                    }
+                    100% {
+                        top: 0;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
+
     .slick-track{
         height: 35vh;
         cursor: pointer;
     }
-    .slick-slide img {
-        
-    }
     .slick-next{
         right: 1%;
+        top: 18vh;
     }
     .slick-prev{
         left: 1%;
+        top: 18vh;
     }
     .slick-next, .slick-prev {
         &::before {
@@ -655,4 +711,5 @@ body {
             color: rgba(13, 200, 0, 0.7);
         }
     }
+
 }

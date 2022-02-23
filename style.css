@@ -437,7 +437,7 @@ body {
   -webkit-transform: scale(50%);
           transform: scale(50%);
   opacity: 0;
-  max-width: calc(100% / 6);
+  max-width: calc(65% / 6);
   margin: 0 10px;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -544,22 +544,6 @@ body {
   overflow-y: hidden;
 }
 
-.al-text-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
-}
-
-.al-text-box .al-text-area {
-  font-size: 1.0rem;
-  margin: 5% 0;
-}
-
 .albums {
   position: relative;
   width: 100%;
@@ -578,9 +562,25 @@ body {
   margin: 0px 50px;
 }
 
+.al-text-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.al-text-box .al-text-area {
+  font-size: 1.0vh;
+  margin: 5vh 0;
+}
+
 .al-text-box .album-title {
   margin: 0 auto;
-  padding: 1% 2%;
+  padding: 1vh 2%;
   font-size: 2.0rem;
   line-height: 2.5rem;
   background: -webkit-gradient(linear, left top, right top, from(#362ae0), color-stop(50%, #3b79cc), to(#42d3ed));
@@ -628,6 +628,11 @@ body {
             transform: scaleX(1);
     opacity: 1;
   }
+}
+
+.albums-tab {
+  position: relative;
+  height: 60vh;
 }
 
 .albums-tab.scroll-album {
@@ -739,6 +744,53 @@ body {
   background-image: url("img/album/content03/top.jpg");
 }
 
+@media screen and (max-width: 1023px) {
+  .al-text-box .al-text-area {
+    font-size: 1.0rem;
+  }
+  .al-text-box .album-title {
+    padding: 0vh 2%;
+    font-size: 1.0rem;
+    line-height: 2.5rem;
+    background: -webkit-gradient(linear, left top, right top, from(#362ae0), color-stop(50%, #3b79cc), to(#42d3ed));
+    background: linear-gradient(to right, #362ae0 0%, #3b79cc 50%, #42d3ed 100%);
+    border-radius: 10px;
+    color: #fff;
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  .albums-tab {
+    margin: 7vh 0;
+  }
+  .al-text-box .al-text-area {
+    font-size: 1.0rem;
+    margin: 2vh 0;
+  }
+  .al-text-box .album-title {
+    padding: 1vh 2%;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+  .slick-track {
+    height: 45vh;
+  }
+  .slick-next {
+    right: 1%;
+    top: 22vh;
+  }
+  .slick-prev {
+    left: 1%;
+    top: 22vh;
+  }
+  .slick-next::before, .slick-prev::before {
+    font-size: 3.0rem;
+    color: rgba(13, 200, 0, 0.7);
+  }
+}
+
 @media screen and (max-width: 767px) {
   #slideshow-sp {
     display: block;
@@ -817,8 +869,63 @@ body {
     max-width: 30%;
     margin: 5px 5px;
   }
+  .albums {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 60vh;
+    padding-top: 20vh;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    z-index: 998;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .albums .slick-slide {
+    margin: 0px 50px;
+  }
+  .al-text-box .al-text-area {
+    font-size: 1.0rem;
+    margin: 2vh 0;
+  }
+  .al-text-box .album-title {
+    padding: 1vh 2%;
+    font-size: .8rem;
+    line-height: 1rem;
+  }
   .albums-tab {
     margin: 10vh 0;
+  }
+  .albums-tab.scroll-album {
+    top: 20%;
+    opacity: 0;
+  }
+  .albums-tab.scroll-album.js-fade {
+    -webkit-animation: scroll-up 1.5s cubic-bezier(0.28, 0.72, 0.55, 1.13);
+            animation: scroll-up 1.5s cubic-bezier(0.28, 0.72, 0.55, 1.13);
+    top: 0;
+    opacity: 1;
+  }
+  @-webkit-keyframes scroll-up {
+    0% {
+      opacity: 0;
+      top: 50px;
+    }
+    100% {
+      top: 0;
+      opacity: 1;
+    }
+  }
+  @keyframes scroll-up {
+    0% {
+      opacity: 0;
+      top: 50px;
+    }
+    100% {
+      top: 0;
+      opacity: 1;
+    }
   }
   .slick-track {
     height: 35vh;
@@ -826,9 +933,11 @@ body {
   }
   .slick-next {
     right: 1%;
+    top: 18vh;
   }
   .slick-prev {
     left: 1%;
+    top: 18vh;
   }
   .slick-next::before, .slick-prev::before {
     font-size: 2.0rem;
