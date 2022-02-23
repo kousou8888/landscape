@@ -76,10 +76,11 @@ h2 {
   position: absolute;
   top: 3vh;
   left: 5%;
+  right: 5%;
 }
 
 #top-p p {
-  font-size: 5.0rem;
+  font-size: 4.0rem;
   color: #fff;
   font-family: Ram;
 }
@@ -134,7 +135,7 @@ body {
 #oita-svg {
   position: absolute;
   display: block;
-  top: 15vh;
+  top: 18vh;
   left: 50%;
   width: 30%;
   -webkit-transform: translate(-50%, 0);
@@ -143,6 +144,13 @@ body {
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
   z-index: 999;
+}
+
+#oita-svg.js-logo {
+  position: fixed;
+  top: 2vh;
+  left: 6%;
+  width: 10%;
 }
 
 #oita01, #oita02 {
@@ -228,37 +236,6 @@ body {
 }
 
 /* ▲　svgアニメーション */
-#top-main {
-  position: relative;
-  height: calc(100vh - 80px);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #E8FBE1;
-  z-index: -100;
-}
-
-#center-main {
-  width: 100%;
-}
-
-.top-left {
-  width: 20%;
-  height: auto;
-  background-color: #E8FBE1;
-  z-index: 100;
-}
-
-.pic-ctn {
-  width: 100%;
-}
-
-.top-right {
-  width: 20%;
-  background-color: #E8FBE1;
-  z-index: 100;
-}
-
 #latest {
   width: 100%;
   background: #E8FBE1;
@@ -460,7 +437,7 @@ body {
   -webkit-transform: scale(50%);
           transform: scale(50%);
   opacity: 0;
-  max-width: calc((60% / 6) - 20px);
+  max-width: calc(100% / 6);
   margin: 0 10px;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -564,6 +541,7 @@ body {
 #album {
   width: 100%;
   background-color: rgba(232, 251, 225, 0.562);
+  overflow-y: hidden;
 }
 
 .al-text-box {
@@ -667,7 +645,7 @@ body {
 @-webkit-keyframes scroll-up {
   0% {
     opacity: 0;
-    top: 20%;
+    top: 50px;
   }
   100% {
     top: 0;
@@ -678,7 +656,7 @@ body {
 @keyframes scroll-up {
   0% {
     opacity: 0;
-    top: 20%;
+    top: 50px;
   }
   100% {
     top: 0;
@@ -781,6 +759,63 @@ body {
   }
   #slideshow {
     display: none;
+  }
+  #top-p {
+    top: auto;
+    bottom: 10vh;
+    left: 2%;
+    right: 3%;
+  }
+  #top-p p {
+    font-size: 3.0rem;
+  }
+  #oita-svg {
+    top: 10vh;
+    width: 50%;
+  }
+  #oita-svg.js-logo {
+    top: 2vh;
+    left: 7%;
+    width: 12%;
+  }
+  .carousel__slide figure {
+    display: block;
+    margin: 0;
+  }
+  .carousel__slide div {
+    position: relative;
+    width: 100%;
+  }
+  .carousel__slide div::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 66.66667%;
+  }
+  .carousel__slide div > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .carousel__thumbnails {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 1%;
+  }
+  .carousel__thumbnails li {
+    max-width: 30%;
+    margin: 5px 5px;
   }
   .albums-tab {
     margin: 10vh 0;

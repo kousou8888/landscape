@@ -52,15 +52,17 @@ const scrollAnimeTop = function () {
         const value = windowHeight / 1.5;  // はみ出させる値（お好みで設定）
         const scrollTop = scrollEle.getBoundingClientRect().top + scrollValue;  // 取得した要素のtop値の取得 + スクロール量
         if (scrollValue > scrollTop - windowHeight + value) {
-            ElementSvg.style.top = "2vh";
-            ElementSvg.style.left = "6%";
-            ElementSvg.style.width = "10%";
-            ElementSvg.style.position = "fixed";
+            ElementSvg.classList.add('js-logo');
+            // ElementSvg.style.top = "2vh";
+            // ElementSvg.style.left = "6%";
+            // ElementSvg.style.width = "10%";
+            // ElementSvg.style.position = "fixed";
         }else{
-            ElementSvg.style.top = "15vh"
-            ElementSvg.style.left = "50%"
-            ElementSvg.style.width = "30%"
-            ElementSvg.style.position = "absolute";
+            ElementSvg.classList.remove('js-logo');
+            // ElementSvg.style.top = "15vh"
+            // ElementSvg.style.left = "50%"
+            // ElementSvg.style.width = "30%"
+            // ElementSvg.style.position = "absolute";
         }
     });
 }
