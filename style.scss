@@ -701,9 +701,9 @@ body {
     .slick-outer {
         height: 100%;
         & img {
-            width: 90%;
+            width: 100vw;
             height: 50%;
-            object-fit: cover;
+            object-fit: contain;
             margin: 0 auto;
             padding: 0 3%;
         }
@@ -723,7 +723,6 @@ body {
         top: 26%;
         &::before {
             font-size: 2.0rem;
-            color: rgba(13, 200, 0, 0.7);
         }
     }
 

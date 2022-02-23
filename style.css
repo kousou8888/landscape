@@ -885,10 +885,10 @@ body {
     height: 100%;
   }
   .slick-outer img {
-    width: 90%;
+    width: 100vw;
     height: 50%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: contain;
+       object-fit: contain;
     margin: 0 auto;
     padding: 0 3%;
   }
@@ -902,7 +902,6 @@ body {
   }
   .slick-next::before, .slick-prev::before {
     font-size: 2.0rem;
-    color: rgba(13, 200, 0, 0.7);
   }
 }
 /*# sourceMappingURL=style.css.map */
