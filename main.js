@@ -121,7 +121,7 @@ const background = function(){
             var winHeight = $(window).height();
             var scrollTop = $(window).scrollTop();
             var showClass = 'show';
-            var timing = winHeight / 3; // 100pxコンテンツが見えたら次のif文がtrue
+            var timing = winHeight / 3; // コンテンツが見えたら次のif文がtrue
             if (scrollTop >= contentsPOS - winHeight + timing){
               $(elem).addClass(showClass);
             } else {
