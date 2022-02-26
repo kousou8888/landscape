@@ -21,13 +21,13 @@ const scrollEvent = function () {
     const ClassElemRight = document.getElementsByClassName("scroll-album");  //右からフェードイン
     const ClassAlTitle = document.getElementsByClassName("album-title");  //右からフェードイン
     const Height = window.innerHeight / 4;
-    scrolleve(ClassElem, Height, 'js-fade');
-    scrolleve(ClassElemRight, Height, 'js-fade');
-    scrolleve(ClassAlTitle, Height, 'js-fade');
+    scrolleve(ClassElem, Height);
+    scrolleve(ClassElemRight, Height);
+    scrolleve(ClassAlTitle, Height);
 };
 const bgpara = function () {
     const Ele = document.getElementsByClassName('contents');
-    const Height = window.innerHeight / 8;
+    const Height = window.innerHeight / 4;
     scrolleve(Ele, Height, 'show'); 
 };
 
@@ -70,6 +70,7 @@ const scrolleve = function(classE, TopPass, clList) {
             const scrollTop = scrollEle[a].getBoundingClientRect().top + scrollValue;  // 取得した要素のtop値の取得 + スクロール量
             if (scrollValue > scrollTop - windowHeight + value) {
                 scrollEle[a].classList.add(clList);
+                scrollEle[a].classList.add('js-fade');
             }else{
                 scrollEle[a].classList.remove(clList);
             };
