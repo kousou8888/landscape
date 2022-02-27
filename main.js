@@ -4,13 +4,13 @@ let imageArray;
 let activeImageIndex = 0;
 window.onload = function() {
     width = window.innerWidth;
-    show(width);
+    // show(width);
     bgpara();
     scrollEvent();
 }
 window.onresize = function() {
     width = window.innerWidth;
-    show(width);
+    // show(width);
     bgpara();
     scrollEvent();
 }
@@ -32,21 +32,23 @@ const bgpara = function () {
 };
 
 // ▼　topのスライドショー
-function show(showWidth) {
-    // console.log(showWidth);
-    if (showWidth <= 767) {  //レスポンシブ切り替えの値
-        console.log('スマホ');
-        slider = document.getElementById('slideshow-sp');
-        imageArray = slider.getElementsByTagName('img');
-        imageArray[activeImageIndex].style.opacity = 1;
-    }else{
-        console.log('PC');
-        slider = document.getElementById('slideshow');
-        imageArray = slider.getElementsByTagName('img');
-        imageArray[activeImageIndex].style.opacity = 1;
-    }
-}
-setTimeout('nextImage()', 2000);
+// function show(showWidth) {
+//     // console.log(showWidth);
+//     if (showWidth <= 767) {  //レスポンシブ切り替えの値
+//         console.log('スマホ');
+//         slider = document.getElementById('slideshow-sp');
+//         imageArray = slider.getElementsByTagName('img');
+//         imageArray[activeImageIndex].style.opacity = 1;
+//     }else{
+//         console.log('PC');
+//         slider = document.getElementById('slideshow');
+//         imageArray = slider.getElementsByTagName('img');
+//         imageArray[activeImageIndex].style.opacity = 1;
+//     }
+// }
+slider = document.getElementById('slideshow');
+imageArray = slider.getElementsByTagName('img');
+setTimeout('nextImage()', 100);
 function nextImage(){
     imageArray[activeImageIndex].style.opacity = 0;
     console.log(imageArray.length);
