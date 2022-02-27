@@ -93,7 +93,7 @@ $("document").ready(function () {
 
 // ▼　topロゴ移動コード
 const scrollAnimeTop = function () {
-    const classE = document.getElementById("latest");
+    const classE = document.getElementById("album");
     const ElementSvg = document.getElementById("oita-svg");
     window.addEventListener("scroll", function () {
         const scrollValue = window.pageYOffset;  //スクロール量の取得
